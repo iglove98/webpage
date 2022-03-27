@@ -8,21 +8,21 @@
     <script>
               var div2 = document.getElementsByClassName("div2");
 
-function handleClick(event) {
-  console.log(event.target);
+function handleClick() {
+  console.log(.target);
   // console.log(this);
   // 콘솔창을 보면 둘다 동일한 값이 나온다
 
-  console.log(event.target.classList);
+  console.log(.target.classList);
 
-  if (event.target.classList[1] === "clicked") {
-    event.target.classList.remove("clicked");
+  if (.target.classList[1] === "clicked") {
+    .target.classList.remove("clicked");
   } else {
     for (var i = 0; i < div2.length; i++) {
       div2[i].classList.remove("clicked");
     }
 
-    event.target.classList.add("clicked");
+    .target.classList.add("clicked");
   }
 }
 
@@ -856,7 +856,7 @@ init();
                     </div>
                   </li>
                   <li class="item">
-                    <div class="item_name"><a href="#">RESPONSIBILITY</a></div>
+                    <div class="item_name"><a href="#">RcffeONSIBILITY</a></div>
                     <div class="item_contents">
                       <div class="contents_menu">
                         <ul class="inner">
@@ -1051,13 +1051,13 @@ init();
                             <dl>
                                 <dt style="padding-top:10px;">
                                     <form action="#" method="post" id="box">
-                                            <input type="checkbox" name="all_cat" value="a" id="c1" class="cc" text-right-padding="10px;"><label for="c1"style="font-size: smaller;">전체 상품보기</label>
-                                            <input type="checkbox" name="cffe" value="a1" id="c2" class="cc"><label for="c2" style="font-size: smaller;">콜드 브루 커피</label>
-                                            <input type="checkbox" name="brud" value="a2" id="c3" class="cc"><label for="c3"style="font-size: smaller;">브루드 커피</label>
-                                            <input type="checkbox" name="esp" value="a3"  id="c4" class="cc"><label for="c4"style="font-size: smaller;">에스프레소</label>
-                                            <input type="checkbox" name="esp" value="a4"  id="c5" class="cc"><label for="c5"style="font-size: smaller;">프라푸치노</label>
-                                            <input type="checkbox" name="esp" value="a5"  id="c6" class="cc"><label for="c6"style="font-size: smaller;">블랜디드</label>
-                                            <input type="checkbox" name="esp" value="a6"  id="c7" class="cc"><label for="c7"style="font-size: smaller;">스타벅스 피지오</label>
+                                            <input type="checkbox" name="all_cof" value="a" id="c1" class="cc" text-right-padding="10px;" onclick="selectAll(this); myFunction3()" ><label for="c1"style="font-size: smaller;">전체 상품보기</label>
+                                            <input type="checkbox" name="cffe" value="a1" id="c2" class="cc" onclick="myFunction()"><label for="c2" style="font-size: smaller;">콜드 브루 커피</label>
+                                            <input type="checkbox" name="cffe" value="a2" id="c3" class="cc" onclick="myFunction1()"><label for="c3"style="font-size: smaller;">브루드 커피</label>
+                                            <input type="checkbox" name="cffe" value="a3"  id="c4" class="cc" onclick="myFunction2()"><label for="c4"style="font-size: smaller;">에스프레소</label>
+                                            <input type="checkbox" name="cffe" value="a4"  id="c5" class="cc"><label for="c5"style="font-size: smaller;">프라푸치노</label>
+                                            <input type="checkbox" name="cffe" value="a5"  id="c6" class="cc"><label for="c6"style="font-size: smaller;">블랜디드</label>
+                                            <input type="checkbox" name="cffe" value="a6"  id="c7" class="cc"><label for="c7"style="font-size: smaller;">스타벅스 피지오</label>
                                     </form>
 
                                 </dt>
@@ -1091,14 +1091,14 @@ init();
                     
                     <div class="product_list">
                         <dl style="display:inline-block;">
-                            <dt style="display: inline-block;" class="cbc1">
+                            <dt style="display: none;" id="cbc1">
                                 <a href="#">콜드 브루 커피</a>
                                 <i class="icon">
                                     <img src="./images/logo_decaf.png">
                                 </i>
                                 <span class="summary">디카페인 에스프레소 샷 추가 가능 (일부 음료 제외)</span>
                             </dt>
-                            <dd style="display:inline-block;" class="cbc1">
+                            <dd style="display:none;" id="cbc2">
                                 <ul class="product_cold_brew">
                                     <il class="brew_menu">
                                         <dl class="ddd">
@@ -1190,14 +1190,14 @@ init();
                                     </il>
                                 </ul>
                             </dd>
-                            <dt style="display: inline-block;" class="cbc2">
+                            <dt style="display: none;" id="cbc3">
                                 <a href="#">브루드 커피</a>
                                 <i class="icon">
                                     <img src="./images/logo_decaf.png">
                                 </i>
                                 <span class="summary">디카페인 에스프레소 샷 추가 가능 (일부 음료 제외)</span>
                             </dt>
-                            <dd style="display:inline-block;" class="cbc2">
+                            <dd style="display:none;" id="cbc4">
                                 <ul class="product_brud">
                                     <il class="brud_menu">
                                         <dl class="ddd">
@@ -1281,15 +1281,15 @@ init();
                                     </il>
                                 </ul>
                             </dd>
-                            <dt style="display:inline-block;" class="cbc3">
+                            <dt style="display:none;" id="cbc5">
                                 <a href="#">에스프레소</a>
                                 <i class="icon">
                                     <img src="./images/logo_decaf.png">
                                 </i>
                                 <span class="summary">디카페인 에스프레소 샷 추가 가능 (일부 음료 제외)</span>
                             </dt>
-                            <dd style="display:inline-block;" class="cbc3">
-                                <ul class="product_espresso">
+                            <dd style="display:none;" id="cbc6">
+                                <ul class="product_cfferesso">
                                     <il class="es_menu">
                                         <dl class="ddd">
                                             <dt>
@@ -1485,7 +1485,17 @@ init();
     </div>
     <script>
       
-
+              var checkBox0 = document.getElementById("c1");
+              var checkBox = document.getElementById("c2");
+              var checkBox1 = document.getElementById("c3");
+              var checkBox2 = document.getElementById("c4");
+              
+              var text =document.getElementById("cbc1");
+              var text1 =document.getElementById("cbc2");
+              var text2 =document.getElementById("cbc3");
+              var text3 =document.getElementById("cbc4");
+              var text4 =document.getElementById("cbc5");
+              var text5 =document.getElementById("cbc6");
 $(function(){
                 const elemModal = document.querySelector(".product_toggle_wrap");
                 var cont = document.querySelector(".content");
@@ -1509,30 +1519,69 @@ $(function(){
                     listimg2.style.display = "block";
                 }
                 
-                var coffe1 = document.querySelector(".cbc1")
-                var coffe2 = document.querySelector(".cbc2")
-                var coffe3 = document.querySelector(".cbc3")
-                
-                document.querySelector("#c2").addEventListener("checked",checkedHandler1 );
-                document.querySelector("#c3").addEventListener("checked",checkedHandler2);
-                document.querySelector("#c4").addEventListener("checked",checkedHandler3 );
-                
-                function checkedHandler1(){
-                  coffe1.style.display ="inline-block"
-                  coffe2.style.display ="none"
-                  coffe3.style.display ="none"
-                }
-                function checkedHandler2(){
-                  coffe1.style.display ="none"
-                  coffe2.style.display ="inline-block"
-                  coffe3.style.display ="none"
-                }
-                function checkedHandler3(){
-                  coffe1.style.display ="none"
-                  coffe2.style.display ="none"
-                  coffe3.style.display ="inline-block"
-                }
+             
             });
+
+function selectAll(selectAll){
+  var checkboxes = document.getElementsByName('cffe');
+  checkboxes.forEach((checkbox) => {
+    checkbox.checked = selectAll.checked;
+  })
+  
+}
+function myFunction3(){
+  if(checkBox0.checked == true){
+    myFunction();
+    myFunction1();
+    myFunction2();
+
+  }else{
+    myFunction();
+    myFunction1();
+    myFunction2();
+  }
+}
+function myFunction1(){
+              if(checkBox1.checked == true){
+                
+                
+                text2.style.display="inline-block";
+                text3.style.display="inline-block";
+                
+              }
+              else{
+                
+                text2.style.display="none";
+                text3.style.display="none";
+              }
+}
+function myFunction2(){
+  if(checkBox2.checked == true){
+                
+                text4.style.display="inline-block";
+                text5.style.display="inline-block";
+              }else{
+                
+                text4.style.display="none";
+                text5.style.display="none";
+                
+              }
+}
+function myFunction(){
+  
+              if(checkBox.checked == true){
+                
+                text.style.display="inline-block";
+                text1.style.display="inline-block";
+               
+              }else{
+                
+                text.style.display="none";
+                text1.style.display="none";
+                
+              }
+            
+            }
     </script>
     
 </body>
